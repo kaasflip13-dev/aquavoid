@@ -14,12 +14,15 @@ button:focus-visible{outline:3px solid var(--foam);outline-offset:3px}
 .tb{position:fixed;bottom:calc(26px + env(safe-area-inset-bottom,0px));width:84px;height:84px;border-radius:50%;background:rgba(232,244,239,.18);border:2px solid rgba(232,244,239,.5);display:none;align-items:center;justify-content:center;font-weight:800;font-size:15px}
 @media(pointer:coarse){.tb{display:flex}}
 #jb{right:24px}#db{right:122px;width:68px;height:68px}
-#shop{position:fixed;inset:0;display:none;align-items:flex-end;justify-content:center;background:linear-gradient(rgba(10,21,48,0) 30%,rgba(10,21,48,.92))}
-#shop>div{width:min(760px,100%);text-align:center;padding:0 16px calc(20px + env(safe-area-inset-bottom,0px))}
+#shop,#wp,#lv{position:fixed;inset:0;display:none;align-items:flex-end;justify-content:center;background:linear-gradient(rgba(10,21,48,0) 30%,rgba(10,21,48,.92))}
+#shop>div,#wp>div,#lv>div{width:min(760px,100%);text-align:center;padding:0 16px calc(20px + env(safe-area-inset-bottom,0px))}
 h2{margin:0;font-size:36px;color:var(--coral)}
-#grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:12px 0}
+#grid,#wgrid,#lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:12px 0}
 .sk{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:15px;padding:10px 6px;border-radius:14px;background:rgba(232,244,239,.14);color:var(--foam);margin:0}
 .sk.on{outline:3px solid var(--amber)}
 .sk i{display:block;width:44px;height:14px;border-radius:7px}
 .sk small{font-weight:600;opacity:.85;font-size:12px}
 #card button+button{margin-left:8px;background:var(--foam)}
+#hpb{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));width:min(320px,60vw);height:14px;border-radius:7px;background:rgba(232,244,239,.2);display:none;pointer-events:none}
+#hpf{display:block;height:100%;width:100%;border-radius:7px;background:var(--coral)}
+.sk:disabled{cursor:not-allowed}
