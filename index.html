@@ -1,28 +1,27 @@
-:root{--ink:#0a1530;--foam:#e8f4ef;--coral:#ff6b8a;--amber:#ffc857;--lagoon:#2ec4b6;box-sizing:border-box}
-html,body{height:100%;margin:0;background:var(--ink);overflow:hidden;font-family:'Fraunces',Georgia,serif;color:var(--foam);touch-action:none;user-select:none}
-canvas{display:block}
-#hud{position:fixed;left:0;right:0;top:0;padding:calc(14px + env(safe-area-inset-top,0px)) 22px 0;display:flex;justify-content:space-between;font-size:clamp(22px,4vw,40px);font-weight:800;pointer-events:none}
-#hud small{font-weight:600;font-size:.42em;display:block;opacity:.7}
-#cb{color:var(--amber);text-align:center;font-size:clamp(28px,6vw,56px)}
-#ban{position:fixed;top:30%;left:0;right:0;text-align:center;font-size:clamp(32px,8vw,80px);font-weight:800;color:var(--coral);opacity:0;pointer-events:none;transition:opacity .4s}
-#card{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,21,48,.78);text-align:center;padding:24px}
-#card div{max-width:450px}
-h1{font-size:clamp(54px,12vw,96px);margin:0;font-weight:800;color:var(--coral);letter-spacing:-.02em}
-p{line-height:1.5;margin:10px 0;font-weight:600}
-button{font:inherit;font-weight:800;font-size:20px;padding:12px 30px;border:0;border-radius:999px;background:var(--amber);color:var(--ink);cursor:pointer;margin-top:10px}
-button:focus-visible{outline:3px solid var(--foam);outline-offset:3px}
-.tb{position:fixed;bottom:calc(26px + env(safe-area-inset-bottom,0px));width:84px;height:84px;border-radius:50%;background:rgba(232,244,239,.18);border:2px solid rgba(232,244,239,.5);display:none;align-items:center;justify-content:center;font-weight:800;font-size:15px}
-@media(pointer:coarse){.tb{display:flex}}
-#jb{right:24px}#db{right:122px;width:68px;height:68px}
-#shop,#wp,#lv{position:fixed;inset:0;display:none;align-items:flex-end;justify-content:center;background:linear-gradient(rgba(10,21,48,0) 30%,rgba(10,21,48,.92))}
-#shop>div,#wp>div,#lv>div{width:min(760px,100%);text-align:center;padding:0 16px calc(20px + env(safe-area-inset-bottom,0px))}
-h2{margin:0;font-size:36px;color:var(--coral)}
-#grid,#wgrid,#lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:12px 0}
-.sk{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:15px;padding:10px 6px;border-radius:14px;background:rgba(232,244,239,.14);color:var(--foam);margin:0}
-.sk.on{outline:3px solid var(--amber)}
-.sk i{display:block;width:44px;height:14px;border-radius:7px}
-.sk small{font-weight:600;opacity:.85;font-size:12px}
-#card button+button{margin-left:8px;background:var(--foam)}
-#hpb{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));width:min(320px,60vw);height:14px;border-radius:7px;background:rgba(232,244,239,.2);display:none;pointer-events:none}
-#hpf{display:block;height:100%;width:100%;border-radius:7px;background:var(--coral)}
-.sk:disabled{cursor:not-allowed}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Swell</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hud"><div><span id="sl">Crystals</span><small id="s">0</small></div><div id="cb"></div><div style="text-align:right"><span id="tl">Time</span><small id="t">90</small></div></div>
+<div id="ban"></div><div id="hpb"><i id="hpf"></i></div>
+<div class="tb" id="jb">Jump</div><div class="tb" id="db">Dash</div>
+<div id="card"><div>
+<h1>Swell</h1>
+<p>The ground is a living wave. Ride each crest to be thrown skyward and catch the floating crystals. Chain catches within 7 seconds to build a multiplier. Teal crystals add 5 seconds in Levels and heal you in Endless. Your ship fires automatically at sea monsters.</p>
+<p>Move W A S D &nbsp; Jump Space &nbsp; Dash Shift<br>Look: drag the mouse, or Q E and arrow keys. On touch: left half moves, right half looks.</p>
+<p id="res"></p>
+<button id="lvb">Levels</button><button id="endb">Endless</button><br><button id="shopb">Ship shop</button><button id="wpb">Weapons</button><p id="coins"></p>
+</div></div>
+<div id="shop"><div><h2>Ship shop</h2><p id="coins2"></p><div id="grid"></div><p id="note"></p><button id="back">Back to menu</button></div></div>
+<div id="wp"><div><h2>Weapon shop</h2><p id="coins3"></p><div id="wgrid"></div><p id="wnote"></p><button id="wback">Back to menu</button></div></div>
+<div id="lv"><div><h2>Levels</h2><div id="lgrid"></div><button id="lback">Back to menu</button></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
