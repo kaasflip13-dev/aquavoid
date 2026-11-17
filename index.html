@@ -51,6 +51,13 @@
             </button>
         </div>
 
+        <div id="nameArea">
+            <label for="nameInput">Captain name</label>
+            <input id="nameInput" type="text" maxlength="16" autocomplete="nickname" spellcheck="false" placeholder="Your name">
+            <button id="nameSave" type="button">Save name</button>
+            <p id="nameNote"></p>
+        </div>
+
         <p>
             The ground is a living wave.
             Ride each crest to be thrown skyward
@@ -78,6 +85,7 @@
 
         <button id="shopb">Ship shop</button>
         <button id="wpb">Weapons</button>
+        <button id="lbb">Leaderboard</button>
 
         <p id="coins"></p>
 
@@ -112,6 +120,16 @@
     </div>
 </div>
 
+<div id="lb">
+    <div>
+        <h2>Leaderboard</h2>
+        <p id="lbNote"></p>
+        <ol id="lbList"></ol>
+        <p id="lbMine"></p>
+        <button id="lbBack">Back to menu</button>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script>
@@ -127,4 +145,3 @@ if (location.protocol === 'file:') {
 <script type="module" src="app.js"></script>
 
 </body>
-</html>
