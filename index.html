@@ -13,6 +13,7 @@
 
 <body>
 
+<!-- in-run HUD -->
 <div id="hud">
     <div>
         <span id="sl">Crystals</span>
@@ -27,16 +28,67 @@
     </div>
 </div>
 
+<!-- island HUD -->
+<div id="hubhud">
+    <b>AQUAVOID Island</b>
+    <span id="hubInfo"></span>
+    <span id="hubHint">Sail to a glowing ring and press F. On touch, tap the button that appears.</span>
+</div>
+
 <div id="ban"></div>
 <div id="hpb"><i id="hpf"></i></div>
+
+<button id="dockPrompt" type="button" hidden></button>
 
 <div class="tb" id="jb">Jump</div>
 <div class="tb" id="db">Dash</div>
 
-<div id="card">
+<!-- Ship Shop building -->
+<div id="shop">
     <div>
+        <h2>Ship Shop</h2>
+        <p id="coins2"></p>
+        <div id="grid"></div>
+        <p id="note"></p>
+        <button id="back">Back to island</button>
+    </div>
+</div>
 
-        <h1>AQUAVOID</h1>
+<!-- Weapon Shop building -->
+<div id="wp">
+    <div>
+        <h2>Weapon Shop</h2>
+        <p id="coins3"></p>
+        <div id="wgrid"></div>
+        <p id="wnote"></p>
+        <button id="wback">Back to island</button>
+    </div>
+</div>
+
+<!-- Lighthouse = Levels -->
+<div id="lv">
+    <div>
+        <h2>Levels</h2>
+        <div id="lgrid"></div>
+        <button id="lback">Back to island</button>
+    </div>
+</div>
+
+<!-- Trophy Hall = Leaderboard -->
+<div id="lb">
+    <div>
+        <h2>Leaderboard</h2>
+        <p id="lbNote"></p>
+        <ol id="lbList"></ol>
+        <p id="lbMine"></p>
+        <button id="lbBack">Back to island</button>
+    </div>
+</div>
+
+<!-- Captain's Cabin = name + Google account + controls -->
+<div id="cab">
+    <div>
+        <h2>Captain's Cabin</h2>
 
         <div id="authArea" aria-live="polite">
             <p id="authStatus">Checking Google sign-in...</p>
@@ -58,75 +110,28 @@
             <p id="nameNote"></p>
         </div>
 
-        <p>
-            The ground is a living wave.
-            Ride each crest to be thrown skyward
-            and catch the floating crystals.
-            Chain catches within 7 seconds
-            to build a multiplier.
-            Teal crystals add 5 seconds in Levels
-            and heal you in Endless.
-            Your ship fires automatically at sea monsters.
-        </p>
-
-        <p>
-            Move W A S D &nbsp; Jump Space &nbsp; Dash Shift
+        <p class="howto">
+            Move W A S D &nbsp; Jump Space &nbsp; Dash Shift &nbsp; Enter a building F
             <br>
             Look: drag the mouse, or Q E and arrow keys.
             On touch: left half moves, right half looks.
+            <br>
+            Ride the crests, catch crystals and sink sea monsters.
+            Your ship fires automatically.
         </p>
 
+        <button id="cabBack">Back to island</button>
+    </div>
+</div>
+
+<!-- Results after a run -->
+<div id="rs">
+    <div>
+        <h2 id="rsTitle">Results</h2>
         <p id="res"></p>
-
-        <button id="lvb">Levels</button>
-        <button id="endb">Endless</button>
-
-        <br>
-
-        <button id="shopb">Ship shop</button>
-        <button id="wpb">Weapons</button>
-        <button id="lbb">Leaderboard</button>
-
-        <p id="coins"></p>
-
-    </div>
-</div>
-
-<div id="shop">
-    <div>
-        <h2>Ship shop</h2>
-        <p id="coins2"></p>
-        <div id="grid"></div>
-        <p id="note"></p>
-        <button id="back">Back to menu</button>
-    </div>
-</div>
-
-<div id="wp">
-    <div>
-        <h2>Weapon shop</h2>
-        <p id="coins3"></p>
-        <div id="wgrid"></div>
-        <p id="wnote"></p>
-        <button id="wback">Back to menu</button>
-    </div>
-</div>
-
-<div id="lv">
-    <div>
-        <h2>Levels</h2>
-        <div id="lgrid"></div>
-        <button id="lback">Back to menu</button>
-    </div>
-</div>
-
-<div id="lb">
-    <div>
-        <h2>Leaderboard</h2>
-        <p id="lbNote"></p>
-        <ol id="lbList"></ol>
-        <p id="lbMine"></p>
-        <button id="lbBack">Back to menu</button>
+        <button id="next" hidden>Next level</button>
+        <button id="again">Play again</button>
+        <button id="home">Back to island</button>
     </div>
 </div>
 
@@ -145,3 +150,4 @@ if (location.protocol === 'file:') {
 <script type="module" src="app.js"></script>
 
 </body>
+</html>
