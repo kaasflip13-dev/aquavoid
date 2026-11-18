@@ -62,21 +62,6 @@ canvas {
     transition: opacity .4s;
 }
 
-#card {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(10, 21, 48, .78);
-    text-align: center;
-    padding: 24px;
-}
-
-#card div {
-    max-width: 450px;
-}
-
 h1 {
     font-size: clamp(54px, 12vw, 96px);
     margin: 0;
@@ -140,7 +125,7 @@ button:focus-visible {
     height: 68px;
 }
 
-#shop, #wp, #lv, #lb {
+#shop, #wp, #lv, #lb, #cab, #rs {
     position: fixed;
     inset: 0;
     display: none;
@@ -155,10 +140,14 @@ button:focus-visible {
 #shop > div,
 #wp > div,
 #lv > div,
-#lb > div {
+#lb > div,
+#cab > div,
+#rs > div {
     width: min(760px, 100%);
     text-align: center;
     padding: 0 16px calc(20px + env(safe-area-inset-bottom, 0px));
+    max-height: 100%;
+    overflow-y: auto;
 }
 
 h2 {
@@ -202,11 +191,6 @@ h2 {
     font-weight: 600;
     opacity: .85;
     font-size: 12px;
-}
-
-#card button + button {
-    margin-left: 8px;
-    background: var(--foam);
 }
 
 #hpb {
@@ -273,18 +257,6 @@ h2 {
 #authArea #googleSignOut {
     background: rgba(232, 244, 239, .18);
     color: var(--foam);
-}
-
-@media(max-height: 720px) {
-    #card {
-        overflow-y: auto;
-        align-items: flex-start;
-    }
-
-    #card > div {
-        margin: auto;
-        padding: 8px 0;
-    }
 }
 
 /* Captain name + leaderboard */
@@ -379,4 +351,63 @@ input {
     opacity: .9;
     font-size: 14px;
     white-space: nowrap;
+}
+
+/* Home island HUD */
+
+#hubhud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: calc(12px + env(safe-area-inset-top, 0px)) 18px 0;
+    text-align: center;
+    pointer-events: none;
+    display: none;
+}
+
+#hubhud b {
+    display: block;
+    font-size: clamp(26px, 5vw, 44px);
+    color: var(--coral);
+    letter-spacing: -.01em;
+}
+
+#hubInfo {
+    display: block;
+    font-size: clamp(15px, 2.6vw, 20px);
+    font-weight: 600;
+}
+
+#hubHint {
+    display: block;
+    font-size: 14px;
+    opacity: .8;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+#dockPrompt {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+    font-size: clamp(16px, 3.4vw, 22px);
+    padding: 12px 26px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .35);
+}
+
+#dockPrompt[hidden],
+#rs button[hidden] {
+    display: none;
+}
+
+#rs button + button {
+    margin-left: 8px;
+    background: var(--foam);
+}
+
+.howto {
+    font-size: 14px;
+    opacity: .9;
 }
